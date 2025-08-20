@@ -1,17 +1,23 @@
 .country {
-    margin: .5rem;
     border-radius: .5rem;
     border: black solid 1px;
     background: #efefef;
     width: 16rem
 }
 
-.country>h2 {
+.country>.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: black 1px solid;
     padding: .35rem
 }
 
-.country>div {
+.country>.header>.basket {
+    cursor: pointer
+}
+
+.country>.medals {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,9 +26,15 @@
     border-radius: inherit
 }
 
-.country>div>button {
+.country>.medals>button {
     padding: .25rem;
     width: 1.5rem
+}
+
+.countries {
+    padding: .5rem;
+    display: flex;
+    gap: .5rem
 }
 
 :root {

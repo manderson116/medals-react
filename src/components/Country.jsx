@@ -1,24 +1,14 @@
-// i only stole the css
-import { useState } from "react";
-
-function Country() {
-    const [name, setName] = useState("United States");
-    const [gold, setGold] = useState(0);
-
-    function handleClick() {
-        // when a component's state is altered, it is re-rendered asynchronously by react
-        setGold(gold + 1);
-    }
-
+export default function Country(props) {
     return (
         <div className="country">
-            <h2>{name}</h2>
-            <div>
-                Gold medals: {gold}
-                <button onClick={handleClick}>+</button>
+            <div className="header">
+                <h2>{props.country.name}</h2>
+                <div className="basket" onClick={() => props.onDelete(props.country.id)}>🗑️</div>
+            </div>
+            
+            <div className="medals">
+                Gold medals: {props.country.gold}
             </div>
         </div>
     );
 }
-
-export default Country;
